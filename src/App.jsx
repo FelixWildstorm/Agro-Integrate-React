@@ -22,6 +22,7 @@ import publicRoutes from './routes/PublicRoutes';
 
 // User Context
 import UserContextProvider from './context/UserContext';
+import ThemeCustomization from './theme';
 
 // React Query Client
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const queryClient = new QueryClient();
 export default function App() {
   return (
     <Fragment>
+       <ThemeCustomization>
       <QueryClientProvider client={queryClient}>
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <UserContextProvider>
@@ -43,23 +45,22 @@ export default function App() {
                     />
                   )
                 })}
-                 <Route path="/" element={<Main />}>
-                  {protectedRoutes.map((route, index) => {
-                    return (
-                      <Route
-                        path={route.path}
-                        element={route.element}
-                        key={index}
-                      />
-                    )
-                  })}
-                </Route>
+                {protectedRoutes.map((route, index) => {
+                  return (
+                    <Route
+                      path={route.path}
+                      element={route.element}
+                      key={index}
+                    />
+                  )
+                })}
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>
           </UserContextProvider>
         </LocalizationProvider>
       </QueryClientProvider>
+      </ThemeCustomization>
     </Fragment>
   );
 };
