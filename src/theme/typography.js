@@ -42,6 +42,7 @@ const Typography = (fontFamily) => ({
     },
     subtitle2: {
         fontSize: '0.75rem',
+        color: "#03363D",
         fontWeight: 400,
     },
     caption: {

@@ -12,6 +12,7 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
 // Layouts
 import Main from './layouts/Main';
+import Landing from './layouts/Landing';
 
 // Components
 import NotFound from './components/NotFound/NotFound';
@@ -45,6 +46,7 @@ export default function App() {
                     />
                   )
                 })}
+                <Route path="/" element={<Landing />}>
                 {protectedRoutes.map((route, index) => {
                   return (
                     <Route
@@ -54,6 +56,7 @@ export default function App() {
                     />
                   )
                 })}
+                </Route>
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>
