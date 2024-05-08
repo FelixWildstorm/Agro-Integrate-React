@@ -4,11 +4,13 @@ import NotFound from "../components/NotFound/NotFound";
 import ForgotPassword from "../components/Authentication/ForgotPassword";
 
 // Authentication Components
+import AuthenticationWizard from "../components/Authentication/AuthenticationWizard";
 import SignIn from "../components/Authentication/SignIn";
 import SignUp from "../components/Authentication/SignUp";
 import VerifyAccount from "../components/Authentication/VerifyAccount";
 
 const publicRoutes = [
+  { path: "/authentication", element: <AuthenticationWizard />},
   { path: "/signin", element: <SignIn /> },
   { path: "/signup", element: <SignUp /> },
   { path: "/verify", element: <VerifyAccount /> },

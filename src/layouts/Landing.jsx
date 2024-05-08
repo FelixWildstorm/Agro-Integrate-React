@@ -164,8 +164,8 @@ export default function Landing() {
                                     color: 'text.primary',
                                     fontSize: 24,
                                     fontWeight: 800,
-                                    letterSpacing: '0.3px',
-                                    lineHeight: 2.5,
+                                    letterSpacing: '0.65px',
+                                    lineHeight: 1.5,
                                     '& span': {
                                         color: 'primary.main'
                                     }
@@ -211,7 +211,7 @@ export default function Landing() {
                                             backgroundColor: '#17494D'
                                         }
                                     }}
-                                    onClick={() => navigate('/signin')}
+                                    onClick={() => navigate('/authentication')}
                                 >
                                     Inicia sesión
                                 </Button>
